@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CollapseView</string>
+    <string name="default_style">default</string>
+</resources>

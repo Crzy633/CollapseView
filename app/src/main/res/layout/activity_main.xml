@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#00afff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <cool.parva.collapseview.CollapseView
+                android:id="@+id/collapse_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_r16_bg">
+                <TextView
+                    android:textSize="72sp"
+                    android:text="@string/default_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:gravity="center"
+                    android:background="@drawable/shape_toggle_bg"/>
+            </cool.parva.collapseview.CollapseView>
+
+            <Button
+                android:id="@+id/tv_btn"
+                android:text="open it"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_marginStart="50dp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+
+        <cool.parva.collapseview.CollapseView
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_r16_bg"
+            android:layout_marginTop="20dp"
+            app:title="custom title, icon, and duration"
+            app:icon="@drawable/ic_toggle_red"
+            app:duration="2000">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_toggle_bg">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:text="android"
+                        android:textSize="24sp"
+                        android:textColor="@color/white_80"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginStart="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:text="text view"
+                        android:textSize="22sp"
+                        android:textColor="@color/white_70"
+                        android:layout_width="128dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:background="@drawable/shape_r8_bg"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:layout_width="908dp"
+                    android:layout_height="1dp"
+                    android:background="@drawable/shape_split_r200_bg"
+                    android:layout_gravity="center_horizontal"
+                    android:alpha="0.2"/>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:text="collapse view"
+                        android:textSize="24sp"
+                        android:textColor="@color/white_80"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginStart="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:text="text view"
+                        android:textSize="22sp"
+                        android:textColor="@color/white_70"
+                        android:layout_width="128dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:background="@drawable/shape_r8_bg"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:layout_width="908dp"
+                    android:layout_height="1dp"
+                    android:background="@drawable/shape_split_r200_bg"
+                    android:layout_gravity="center_horizontal"
+                    android:alpha="0.2"/>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:text="parva"
+                        android:textSize="24sp"
+                        android:textColor="@color/white_80"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginStart="16dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:text="text view"
+                        android:textSize="22sp"
+                        android:textColor="@color/white_70"
+                        android:layout_width="128dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:background="@drawable/shape_r8_bg"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </cool.parva.collapseview.CollapseView>
+
+        <cool.parva.collapseview.CollapseView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_r16_bg"
+            android:layout_marginTop="20dp">
+
+            <cool.parva.collapseview.CollapseViewHead
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="36sp"
+                    android:textColor="@color/white"
+                    android:text="custom Head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    tools:ignore="HardcodedText" />
+            </cool.parva.collapseview.CollapseViewHead>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="custom Head, use CollapseViewHead"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:gravity="center"
+                    android:background="@drawable/shape_toggle_bg"
+                    tools:ignore="HardcodedText" />
+            </FrameLayout>
+        </cool.parva.collapseview.CollapseView>
+
+    </LinearLayout>
+
+</ScrollView>
