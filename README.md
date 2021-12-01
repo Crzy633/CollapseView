@@ -2,7 +2,7 @@
 
 ## example in code
 
-![show](\readme\show.gif)
+![show](show.gif)
 
 
 
