@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#00afff">
+    android:background="#00afff"
+    tools:ignore="HardcodedText">
 
     <LinearLayout
         android:orientation="vertical"
@@ -20,16 +20,16 @@
 
             <cool.parva.collapseview.CollapseView
                 android:id="@+id/collapse_view"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_r16_bg">
                 <TextView
-                    android:textSize="72sp"
-                    android:text="@string/default_style"
+                    android:textSize="36sp"
+                    android:text="CollapseView should have just one body"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:gravity="center"
-                    android:background="@drawable/shape_toggle_bg"/>
+                    android:background="@drawable/shape_toggle_bg" />
             </cool.parva.collapseview.CollapseView>
 
             <Button
@@ -39,8 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
-                android:layout_marginStart="50dp"
-                tools:ignore="HardcodedText" />
+                android:layout_marginStart="50dp" />
 
         </LinearLayout>
 
@@ -48,17 +47,19 @@
         <cool.parva.collapseview.CollapseView
             android:layout_width="450dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_r16_bg"
+            android:background="@drawable/shape_r48_bg"
             android:layout_marginTop="20dp"
-            app:title="custom title, icon, and duration"
-            app:icon="@drawable/ic_toggle_red"
-            app:duration="2000">
+            app:collapse_view_title="custom title, icon, and duration"
+            app:collapse_view_icon="@drawable/ic_toggle_red"
+            app:collapse_view_duration="100"
+            app:collapse_view_open="true">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_toggle_bg">
+                android:paddingHorizontal="20dp"
+                android:background="@drawable/shape_toggle_r48_bg">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
@@ -73,8 +74,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        android:layout_marginStart="16dp"
-                        tools:ignore="HardcodedText" />
+                        android:layout_marginStart="16dp" />
 
                     <TextView
                         android:text="text view"
@@ -86,8 +86,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        android:background="@drawable/shape_r8_bg"
-                        tools:ignore="HardcodedText" />
+                        android:background="@drawable/shape_r8_bg" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
                     android:layout_width="908dp"
@@ -109,8 +108,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        android:layout_marginStart="16dp"
-                        tools:ignore="HardcodedText" />
+                        android:layout_marginStart="16dp" />
 
                     <TextView
                         android:text="text view"
@@ -122,8 +120,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        android:background="@drawable/shape_r8_bg"
-                        tools:ignore="HardcodedText" />
+                        android:background="@drawable/shape_r8_bg" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <View
                     android:layout_width="908dp"
@@ -145,8 +142,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        android:layout_marginStart="16dp"
-                        tools:ignore="HardcodedText" />
+                        android:layout_marginStart="16dp" />
 
                     <TextView
                         android:text="text view"
@@ -158,8 +154,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        android:background="@drawable/shape_r8_bg"
-                        tools:ignore="HardcodedText" />
+                        android:background="@drawable/shape_r8_bg" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </cool.parva.collapseview.CollapseView>
@@ -179,8 +174,7 @@
                     android:text="custom Head"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    tools:ignore="HardcodedText" />
+                    android:layout_gravity="center" />
             </cool.parva.collapseview.CollapseViewHead>
 
             <FrameLayout
@@ -192,8 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:gravity="center"
-                    android:background="@drawable/shape_toggle_bg"
-                    tools:ignore="HardcodedText" />
+                    android:background="@drawable/shape_toggle_bg" />
             </FrameLayout>
         </cool.parva.collapseview.CollapseView>
 

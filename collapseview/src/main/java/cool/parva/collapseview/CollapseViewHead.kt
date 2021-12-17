@@ -2,13 +2,9 @@ package cool.parva.collapseview
 
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.LinearInterpolator
-import android.view.animation.RotateAnimation
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
@@ -52,12 +48,12 @@ class CollapseViewHead : FrameLayout {
     /**
      * play rotate animation
      */
-    internal fun collapse(isOpen: Boolean) {
+    internal fun collapse(isOpen: Boolean, durationTime: Long = -1) {
         iconToggle?.let { view ->
             animator?.cancel()
             val to = if (isOpen) 0f else 90f
             animator = ValueAnimator.ofFloat(rotationDegree, to).apply {
-                duration = parent().duration.toLong() / 2
+                duration = if (durationTime >= 0) durationTime else parent().duration.toLong() / 2
                 addUpdateListener {
                     rotationDegree = it.animatedValue as Float
                     view.rotation = rotationDegree

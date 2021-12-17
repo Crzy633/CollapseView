@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CollapseView">
-        <attr name="title" format="string"/>
-        <attr name="duration" format="integer"/>
-        <attr name="icon" format="reference"/>
+        <attr name="collapse_view_title" format="string"/>
+        <attr name="collapse_view_open" format="boolean"/>
+        <attr name="collapse_view_duration" format="integer"/>
+        <attr name="collapse_view_icon" format="reference"/>
     </declare-styleable>
 </resources>

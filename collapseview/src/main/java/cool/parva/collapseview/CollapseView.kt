@@ -47,9 +47,22 @@ class CollapseView : LinearLayout {
             }
             checkStructure()
             head.setOnClickListener { collapse() }
+
+            if (!open) {
+                body.visibility = View.GONE
+            }
+
             head.post {
                 body.post {
-                    collapse(true)
+                    head.post {
+                        value = if (open) {
+                            head.collapse(false, 0)
+                            body.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
+                            head.height + body.height.coerceAtLeast(body.measuredHeight)
+                        } else {
+                            head.height
+                        }
+                    }
                 }
             }
         }
@@ -64,6 +77,7 @@ class CollapseView : LinearLayout {
      */
     fun collapse() {
         checkStructure()
+        body.visibility = VISIBLE
         head.collapse(open)
         collapse(open, duration.toLong())
         open = !open
@@ -75,9 +89,10 @@ class CollapseView : LinearLayout {
      */
     private fun init(context: Context, attrs: AttributeSet) {
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CollapseView)
-        typedArray.getString(R.styleable.CollapseView_title)?.let { title = it }
-        icon = typedArray.getDrawable(R.styleable.CollapseView_icon)
-        duration = typedArray.getInt(R.styleable.CollapseView_duration, duration)
+        typedArray.getString(R.styleable.CollapseView_collapse_view_title)?.let { title = it }
+        open = typedArray.getBoolean(R.styleable.CollapseView_collapse_view_open, open)
+        icon = typedArray.getDrawable(R.styleable.CollapseView_collapse_view_icon)
+        duration = typedArray.getInt(R.styleable.CollapseView_collapse_view_duration, duration)
         typedArray.recycle()
     }
 
