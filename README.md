@@ -5,6 +5,10 @@
 ![show](show.gif)
 
 
+```groovy
+implementation 'io.github.crzy633:collapseview:0.0.1'
+```
+
 
 ## how to use
 
