@@ -26,12 +26,10 @@ class CollapseViewHead : FrameLayout {
             : super(context, attrs, defStyleAttr)
 
 
-    init {
-        post {
-            if (childCount == 0) createDefaultHead()
-        }
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        if (childCount == 0) createDefaultHead()
     }
-
 
     private fun createDefaultHead() {
         val headView = LayoutInflater.from(context)

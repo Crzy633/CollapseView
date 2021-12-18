@@ -40,31 +40,33 @@ class CollapseView : LinearLayout {
 
     init {
         orientation = VERTICAL
-        post {
-            for (i in 0 until childCount) {
-                if (getChildAt(i) is CollapseViewHead) break
-                if (i == childCount - 1) addView(CollapseViewHead(context), 0)
-            }
-            checkStructure()
-            head.setOnClickListener { collapse() }
+    }
 
-            if (!open) {
-                body.visibility = View.GONE
-            }
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        for (i in 0 until childCount) {
+            if (getChildAt(i) is CollapseViewHead) break
+            if (i == childCount - 1) addView(CollapseViewHead(context), 0)
+        }
+        checkStructure()
+        head.setOnClickListener { collapse() }
+    }
 
-            head.post {
-                body.post {
-                    head.post {
-                        value = if (open) {
-                            head.collapse(false, 0)
-                            body.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
-                            head.height + body.height.coerceAtLeast(body.measuredHeight)
-                        } else {
-                            head.height
-                        }
-                    }
-                }
-            }
+    override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
+        super.onLayout(changed, l, t, r, b)
+        if (!open && height != head.height) {
+            var lp = layoutParams
+            if (lp == null) lp = ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, head.height)
+            else lp.height = head.height
+            layoutParams = lp
+        }
+
+        value = if (open) {
+            head.collapse(false, 0)
+            body.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
+            head.height + body.height.coerceAtLeast(body.measuredHeight)
+        } else {
+            head.height
         }
     }
 
@@ -77,12 +79,10 @@ class CollapseView : LinearLayout {
      */
     fun collapse() {
         checkStructure()
-        body.visibility = VISIBLE
         head.collapse(open)
         collapse(open, duration.toLong())
         open = !open
     }
-
 
     /**
      * get xml attrs
@@ -140,5 +140,12 @@ class CollapseView : LinearLayout {
             }
             this.start()
         }
+        onCollapseListener?.invoke(!isOpen)
+    }
+
+    private var onCollapseListener: ((Boolean) -> Unit)? = null
+
+    fun setOnCollapseListener(listener: ((Boolean) -> Unit)?) {
+        onCollapseListener = listener
     }
 }

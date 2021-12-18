@@ -20,13 +20,13 @@
 
             <cool.parva.collapseview.CollapseView
                 android:id="@+id/collapse_view"
-                android:layout_width="300dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_r16_bg">
                 <TextView
                     android:textSize="36sp"
                     android:text="CollapseView should have just one body"
-                    android:layout_width="match_parent"
+                    android:layout_width="250dp"
                     android:layout_height="150dp"
                     android:gravity="center"
                     android:background="@drawable/shape_toggle_bg" />

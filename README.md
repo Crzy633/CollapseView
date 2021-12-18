@@ -6,7 +6,7 @@
 
 
 ```groovy
-implementation 'io.github.crzy633:collapseview:0.0.2'
+implementation 'io.github.crzy633:collapseview:0.0.3'
 ```
 
 
@@ -15,13 +15,13 @@ implementation 'io.github.crzy633:collapseview:0.0.2'
 ```xml
 <cool.parva.collapseview.CollapseView
 	android:id="@+id/collapse_view"
-	android:layout_width="300dp"
+	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:background="@drawable/shape_r16_bg">
     <TextView
 		android:textSize="36sp"
 		android:text="CollapseView should have just one body"
-		android:layout_width="match_parent"
+		android:layout_width="250dp"
 		android:layout_height="150dp"
 		android:gravity="center"
 		android:background="@drawable/shape_toggle_bg" />
@@ -40,7 +40,7 @@ custom attributes
 ```xml
 <cool.parva.collapseview.CollapseView
 	android:id="@+id/collapse_view"
-	android:layout_width="300dp"
+	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:background="@drawable/shape_r16_bg"
     app:collapse_view_title="custom title, icon, and duration"
@@ -50,14 +50,16 @@ custom attributes
     <TextView
 		android:textSize="36sp"
 		android:text="CollapseView should have just one body"
-		android:layout_width="match_parent"
+		android:layout_width="250dp"
 		android:layout_height="150dp"
 		android:gravity="center"
 		android:background="@drawable/shape_toggle_bg" />
 </cool.parva.collapseview.CollapseView>
 ```
 
-  
+ 
+
+## Custom Head
 
 `CollapseView` should have only one child view, or one more head view:
 
@@ -91,33 +93,3 @@ custom attributes
 ```
 
 
-
-## a Bug
-
-There is a bug.
-
-If you use `android:layout_width="wrap_content"` on Collapse View, it may display wrong. Like:
-
-```xml
-<cool.parva.collapseview.CollapseView
-	android:id="@+id/collapse_view"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:background="@drawable/shape_r16_bg">
-    <TextView
-        android:textSize="36sp"
-        android:text="CollapseView should have just one body"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:background="@drawable/shape_toggle_bg" />
-</cool.parva.collapseview.CollapseView>
-```
-
-![show_bug](show_bug.gif)
-
-this is because the body view's visibility attribute will be set to `"gone"` in the code.
-
-
-
-## 

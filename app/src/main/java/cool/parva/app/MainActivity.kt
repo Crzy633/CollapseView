@@ -1,9 +1,9 @@
 package cool.parva.app
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import cool.parva.collapseview.CollapseView
 
 class MainActivity : AppCompatActivity() {
@@ -15,13 +15,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tvBtn.setOnClickListener {
-            collapseView.collapse()
-            if (collapseView.isOpen()) {
-                tvBtn.text = "close it"
-            } else {
-                tvBtn.text = "open it"
-            }
+
+        tvBtn.setOnClickListener { collapseView.collapse() }
+
+        // add Listener
+        collapseView.setOnCollapseListener { isOpen ->
+            tvBtn.text = if (isOpen) "close it" else "open it"
         }
     }
 }
