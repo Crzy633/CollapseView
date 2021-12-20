@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         tvBtn.setOnClickListener { collapseView.collapse() }
 
-        // add Listener
         collapseView.setOnCollapseListener { isOpen ->
             tvBtn.text = if (isOpen) "close it" else "open it"
         }
